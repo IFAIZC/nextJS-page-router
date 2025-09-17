@@ -1,4 +1,4 @@
-"use client" //for client side interactivity
+// "use client" //for client side interactivity
 
 import Link from "next/link"
 import PostCard from "../../../components/postCard"
