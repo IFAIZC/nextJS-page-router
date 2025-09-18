@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function PostCard({img,title,description,alt}) {
   return (
     <div className="card bg-base-300 w-50 md:w-50 lg:w-70 xl:w-90 shadow-sm mb-5 hover:scale-105 transition-all duration-300 hover:shadow-xl">
@@ -6,9 +8,13 @@ export default function PostCard({img,title,description,alt}) {
         <p>{description}</p>
       </div>
       <figure>
-        <img
+        <Image
           src={img}
-          alt={alt} />
+          alt={alt} 
+          width={400}
+          height={250}
+          priority 
+        />
       </figure>
     </div>
   )

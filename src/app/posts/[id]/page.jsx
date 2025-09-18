@@ -1,6 +1,7 @@
 import BackButton from "../../../../components/backButton";
 import { postData } from "../../../../components/postData";
 import { Share } from "lucide-react";
+import Image from "next/image";
 
 export default function UserPost({ params }) {
   const { id } = params;
@@ -35,10 +36,13 @@ export default function UserPost({ params }) {
         {/* Featured Image */}
         {post.img && (
           <div className="mb-8">
-            <img 
+            <Image
               src={post.img} 
               alt={post.title}
               className="w-full h-64 sm:h-80 object-cover rounded-lg shadow-md"
+              width={400}
+              height={250}
+              priority 
             />
           </div>
         )}
