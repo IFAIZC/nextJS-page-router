@@ -1,6 +1,5 @@
 import BackButton from "../../../../components/backButton";
 import { postData } from "../../../../components/postData";
-import { Share } from "lucide-react";
 import Image from "next/image";
 
 export default function UserPost({ params }) {
@@ -17,7 +16,7 @@ export default function UserPost({ params }) {
   }
 
   return (
-    <div className="h-screen py-8">
+    <div className="flex-1 py-8">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Blog Header */}
         <header className="mb-8">
