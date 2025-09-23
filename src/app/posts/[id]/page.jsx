@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import BackButton from "../../../../components/backButton";
 import { postData } from "../../../../components/postData";
 import Image from "next/image";
@@ -33,18 +34,20 @@ export default function UserPost({ params }) {
         </header>
 
         {/* Featured Image */}
-        {post.img && (
-          <div className="mb-8">
-            <Image
-              src={post.img} 
-              alt={post.title}
-              className="w-full h-64 sm:h-80 object-cover rounded-lg shadow-md"
-              width={400}
-              height={250}
-              priority 
-            />
-          </div>
-        )}
+        <Suspense fallback={<div className="skeleton h-64 w-full mb-8"></div>}>
+          {post.img && (
+            <div className="mb-8">
+              <Image
+                src={post.img} 
+                alt={post.title}
+                className="w-full h-64 sm:h-80 object-cover rounded-lg shadow-md"
+                width={400}
+                height={250}
+                priority 
+              />
+            </div>
+          )}
+        </Suspense>
 
         {/* Blog Content */}
         <div className="bg-base-300 rounded-lg shadow-sm p-8 mb-8">
