@@ -13,7 +13,7 @@ export default function Posts() {
 
 
         {/* to use suspense feature here */}
-        {/* <Suspense fallback={<Loading/>}> */}
+        <Suspense fallback={<Loading/>}>
           {postData.map(post => (
             <Link key={post.id} href={`/posts/${post.id}`}>
               <PostCard 
@@ -24,7 +24,7 @@ export default function Posts() {
               />
             </Link>
           ))}
-        {/* </Suspense> */}
+        </Suspense>
       </div>
     </div>
   )

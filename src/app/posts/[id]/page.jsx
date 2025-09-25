@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import BackButton from "../../../../components/backButton";
 import { postData } from "../../../../components/postData";
 import Image from "next/image";
+import Loading from "../../../../components/loading";
 
 export default function UserPost({ params }) {
   const { id } = params;
@@ -34,7 +35,7 @@ export default function UserPost({ params }) {
         </header>
 
         {/* Featured Image */}
-        <Suspense fallback={<div className="skeleton h-64 w-full mb-8"></div>}>
+        <Suspense fallback={<div className="flex flex-1 justify-center items-center mb-10"><Loading/></div>}>
           {post.img && (
             <div className="mb-8">
               <Image
