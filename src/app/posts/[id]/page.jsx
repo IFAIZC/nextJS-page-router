@@ -5,6 +5,7 @@ import Image from "next/image";
 import Loading from "../../../../components/loading";
 
 export default function UserPost({ params }) {
+  // to determine which id that user clicks
   const { id } = params;
   
   const post = postData.find((p) => p.id === Number(id));
